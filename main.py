@@ -26,6 +26,12 @@ def main():
             value = data[element]
             if value == None:
                 value = 0  
+            if element == "state":
+                if str(value).lower() in ['am','rr','ap','pa','to','ro','ac']: tags.append("regiao:norte")
+                if str(value).lower() in ['ma','pi','ce','rn','pe','pb','se','al','ba']: tags.append("regiao:nordeste")
+                if str(value).lower() in ['mt','ms','go']: tags.append("regiao:centro-oeste")
+                if str(value).lower() in ['sp','rj','es','mg']: tags.append("regiao:sudeste")
+                if str(value).lower() in ['pr','rs','sc']: tags.append("regiao:sul")
             tags.append(str(key)+":"+str(value))
 
         value = data['deaths'] if data['deaths'] != None else 0
