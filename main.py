@@ -44,7 +44,7 @@ def main():
         api.Metric.send(metric="brazil.covid19.death_rate", points=value, tags=tags)  
         value = data['estimated_population_2019'] if data['estimated_population_2019'] != None else 0
         api.Metric.send(metric="brazil.covid19.estimated_population_2019", points=value, tags=tags)  
-        print(str(i)+"/"+str(len(dataset['results'])))      
+        print(str(i+1)+"/"+str(len(dataset['results'])))      
 
 
         
